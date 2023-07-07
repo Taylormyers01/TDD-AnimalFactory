@@ -55,6 +55,7 @@ public class DogHouseTest {
         String givenName = "Pheonix";
         Date givenBirthDate = new Date();
         Integer givenId = 44;
+        DogHouse.clear();
 
         // When (a dog is constructed)
         Dog dog = new Dog(givenName, givenBirthDate, givenId);
@@ -74,6 +75,7 @@ public class DogHouseTest {
         String givenName = "Pheonix";
         Date givenBirthDate = new Date();
         Integer givenId = 44;
+        DogHouse.clear();
 
         // When (a dog is constructed)
         Dog dog = new Dog(givenName, givenBirthDate, givenId);
@@ -110,6 +112,7 @@ public class DogHouseTest {
         String givenName = "Pheonix";
         Date givenBirthDate = new Date();
         Integer givenId = 44;
+        DogHouse.clear();
 
         // When (a dog is constructed)
         Dog dog = new Dog(givenName, givenBirthDate, givenId);

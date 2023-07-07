@@ -40,6 +40,7 @@ public class CatHouseTest {
         String givenName = "Pheonix";
         Date givenBirthDate = new Date();
         Integer givenId = 44;
+        CatHouse.clear();
 
         // When (a cat is constructed)
         Cat cat = new Cat(givenName, givenBirthDate, givenId);
@@ -59,6 +60,7 @@ public class CatHouseTest {
         String givenName = "Pheonix";
         Date givenBirthDate = new Date();
         Integer givenId = 44;
+        CatHouse.clear();
 
         // When (a cat is constructed)
         Cat cat = new Cat(givenName, givenBirthDate, givenId);
@@ -78,6 +80,7 @@ public class CatHouseTest {
         String givenName = "Pheonix";
         Date givenBirthDate = new Date();
         Integer givenId = 44;
+        CatHouse.clear();
 
         // When (a cat is constructed)
         Cat cat = new Cat(givenName, givenBirthDate, givenId);
@@ -95,6 +98,7 @@ public class CatHouseTest {
         String givenName = "Pheonix";
         Date givenBirthDate = new Date();
         Integer givenId = 44;
+        CatHouse.clear();
 
         // When (a cat is constructed)
         Cat cat = new Cat(givenName, givenBirthDate, givenId);
