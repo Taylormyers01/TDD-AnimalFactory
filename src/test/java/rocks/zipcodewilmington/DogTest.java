@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Dog;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
@@ -33,15 +34,15 @@ public class DogTest {
     }
     @Test
     public void constructorTest(){
-        // Given (cat data)
+        // Given (dog data)
         String givenName = "Pheonix";
         Date givenBirthDate = new Date();
         Integer givenId = 44;
 
-        // When (a cat is constructed)
+        // When (a dog is constructed)
         Dog dog = new Dog(givenName, givenBirthDate, givenId);
 
-        // When (we retrieve data from the cat)
+        // When (we retrieve data from the dog)
         String retrievedName = dog.getName();
         Date retrievedBirthDate = dog.getBirthDate();
         Integer retrievedId = dog.getId();
@@ -50,5 +51,110 @@ public class DogTest {
         Assert.assertEquals(givenName, retrievedName);
         Assert.assertEquals(givenBirthDate, retrievedBirthDate);
         Assert.assertEquals(givenId, retrievedId);
+    }
+    @Test
+    public void speakTest(){
+        // Given (dog data)
+        String givenName = "Pheonix";
+        Date givenBirthDate = new Date();
+        Integer givenId = 44;
+
+        // When (a dog is constructed)
+        Dog dog = new Dog(givenName, givenBirthDate, givenId);
+
+        // When (we retrieve data from the dog)
+        String dogSound = dog.speak();
+        String expected = "bark!";
+
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertEquals(expected, dogSound);
+    }
+    @Test
+    public void birthDateTest(){
+        // Given (dog data)
+        String givenName = "Pheonix";
+        Date givenBirthDate = new Date();
+        Integer givenId = 44;
+
+        // When (a dog is constructed)
+        Dog dog = new Dog(givenName, givenBirthDate, givenId);
+        Date newBirthDate = new Date(1997, 5,5);
+        dog.setBirthDate(newBirthDate);
+
+        // When (we retrieve data from the dog)
+        Date retrievedBirthDate = dog.getBirthDate();
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertEquals(newBirthDate, retrievedBirthDate);
+
+    }
+    @Test
+    public void eatTest(){
+        // Given (dog data)
+        String givenName = "Pheonix";
+        Date givenBirthDate = new Date();
+        Integer givenId = 44;
+
+        // When (a dog is constructed)
+        Dog dog = new Dog(givenName, givenBirthDate, givenId);
+        int expected = 1;
+        Food lasagna = new Food();
+        dog.eat(lasagna);
+        // When (we retrieve data from the dog)
+        int retrievedFoodEated = dog.getNumberOfMealsEaten();
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertEquals(expected, retrievedFoodEated);
+
+    }
+    @Test
+    public void getIdTest(){
+        // Given (dog data)
+        String givenName = "Pheonix";
+        Date givenBirthDate = new Date();
+        Integer givenId = 44;
+
+        // When (a dog is constructed)
+        Dog dog = new Dog(givenName, givenBirthDate, givenId);
+
+        // When (we retrieve data from the dog)
+        int expected = 44;
+        int retrievedId = dog.getId();
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertEquals(expected, retrievedId);
+    }
+    @Test
+    public void animalInheritanceTest() {
+        // Given (dog data)
+        String givenName = "Otis";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        // When (a dog is constructed)
+        Dog dog= new Dog(givenName, givenBirthDate, givenId);
+
+
+        // When (we retrieve data from the dog)
+
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertTrue(dog instanceof Dog);
+    }
+    @Test
+    public void mamalInheritanceTest() {
+        // Given (dog data)
+        String givenName = "Otis";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        // When (a dog is constructed)
+        Dog dog = new Dog(givenName, givenBirthDate, givenId);
+
+        // When (we retrieve data from the cat)
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertTrue(dog instanceof Mammal);
     }
 }
